@@ -6,6 +6,8 @@ $subscriptionId = '<subid>'
 $resourceGroup = '<resource-group>'
 #VPN Gateway associated with vWAN S2S
 $vpngw = '<vpn-gateway>'
+# Login to Azure PowerShell
+Connect-AzAccount
 # Set target Azure Subscription
 Set-AzContext -Subscription $subscriptionId
 # Set AzRest URI
@@ -14,6 +16,8 @@ $restUri = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroup/provide
 $response = Invoke-AzRestMethod -Path $restUri -Method POST
 # Extract Location Header
 $location = $response.Headers.Location.PathAndQuery
+# Sleep so API call doesn't return 'null' value
+Start-Sleep -Seconds 3
 # GET on Location Header Key
 $results = Invoke-AzRestMethod -Path $location -Method GET
 # Convert Results to JSON

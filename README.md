@@ -1,2 +1,2 @@
 # GetLearnedRoutes
-Retrieve Learned Routes from a S2S VPN Gateway associated with vWAN.
+Retrieve Learned Routes from a Site-to-Site VPN Gateway associated with Azure Virtual WAN.
