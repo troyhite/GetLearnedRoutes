@@ -1,3 +1,4 @@
+![Azure vWAN](https://www.appliedis.com/wp-content/uploads/2019/06/Azure-Virtual-WAN-Icon.png)
 # GetLearnedRoutes
 Retrieve Learned Routes from a Site-to-Site VPN Gateway associated with Azure Virtual WAN by utilizing the new getlearnedroutes?api-version=2022-01-01 and export the results as a flat JSON file to the storage account for the Azure Function.
 # Prerequisities
