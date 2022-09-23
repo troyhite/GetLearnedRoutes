@@ -14,7 +14,7 @@
 if ($env:MSI_SECRET) {
     Disable-AzContextAutosave -Scope Process | Out-Null
     Connect-AzAccount -Identity
-    $identity = Get-AzUserAssignedIdentity -ResourceGroupName <rg> -Name <mi>
+    $identity = Get-AzUserAssignedIdentity -ResourceGroupName rg -Name mi
     Connect-AzAccount -Identity -AccountId $identity.ClientId
 }
 
