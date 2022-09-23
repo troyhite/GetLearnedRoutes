@@ -24,7 +24,7 @@ if ($env:MSI_SECRET) {
     Connect-AzAccount -Identity -AccountId $identity.ClientId
 }
 ```
-## Grant the managed identity contributor access to the subscription or resource group so it can perform actions
+## Grant the USER CREATED managed identity contributor access to the subscription or resource group so it can perform actions
 
 The below command sets the access at the subscription level.
 
