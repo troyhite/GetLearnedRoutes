@@ -1,5 +1,5 @@
 {
-  "scriptFile": "_init_.py",
+  "scriptFile": "__init__.py",
   "bindings": [
     {
       "name": "mytimer",
