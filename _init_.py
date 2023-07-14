@@ -7,7 +7,7 @@ import azure.functions as func
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-def main(mytimer: func.TimerRequest) -> None:
+def main(mytimer: func.TimerRequest, outputBlob: func.Out[str]) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
         tzinfo=datetime.timezone.utc).isoformat()
 
@@ -43,6 +43,4 @@ def main(mytimer: func.TimerRequest) -> None:
     # Convert Results to JSON
     value = json.loads(results.content)['value']
     # Push JSON to Storage Account
-    url = f"https://{storageAccountName}.blob.core.windows.net/{containerName}/{blobName}.json"
-    headers = {'Content-Type': 'application/json'}
-    requests.put(url, headers=headers, data=json.dumps(value))
+    outputBlob.set(json.dumps(value))
